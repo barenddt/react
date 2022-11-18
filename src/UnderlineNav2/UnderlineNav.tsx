@@ -21,7 +21,6 @@ export type UnderlineNavProps = {
   'aria-label'?: React.AriaAttributes['aria-label']
   as?: React.ElementType
   align?: 'right'
-  sx?: SxProp
   variant?: 'default' | 'small'
   /**
    * loading state for all counters (to prevent multiple layout shifts)
@@ -29,7 +28,7 @@ export type UnderlineNavProps = {
   loadingCounters?: boolean
   afterSelect?: (event: React.MouseEvent<HTMLLIElement> | React.KeyboardEvent<HTMLLIElement>) => void
   children: React.ReactNode
-}
+} & SxProp
 // When page is loaded, we don't have ref for the more button as it is not on the DOM yet.
 // However, we need to calculate number of possible items when the more button present as well. So using the width of the more button as a constant.
 const MORE_BTN_WIDTH = 86
